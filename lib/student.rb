@@ -13,6 +13,7 @@ class Student
 
   def update
     sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
+    binding.pry
     db[:conn].execute(sql, self.name, self.grade, self.id)
   end
 
