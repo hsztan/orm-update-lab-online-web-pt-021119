@@ -56,8 +56,14 @@ class Student
       SQL
     DB[:conn].execute(sql)
   end
-  # Remember, you can access your database connection anywhere in this class
-  #  with DB[:conn]
+
+  def self.find_by_name(name)
+    sql = <<-SQL
+      SELECT * FROM students
+      WHERE name =  ?
+      SQL
+    self.new_from_db(DB[:conn].execute(sql, name))
+  end
 
 
 end
