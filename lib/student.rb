@@ -37,7 +37,6 @@ class Student
 
   def self.new_from_db(row)
     Student.new.(row[1], row[2], row[0])
-    end
   end
 
   def self.create_table
