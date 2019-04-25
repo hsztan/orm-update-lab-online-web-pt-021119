@@ -64,6 +64,4 @@ class Student
       SQL
     self.new_from_db(DB[:conn].execute(sql, name)[0])
   end
-
-
 end
