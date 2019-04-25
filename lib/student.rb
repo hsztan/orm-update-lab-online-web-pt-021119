@@ -36,10 +36,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    Student.new.tap do |student|
-      student.id = row[0]
-      student.name = row[1]
-      student.grade = row[2]
+    Student.new.(row[1], row[2], row[0])
     end
   end
 
